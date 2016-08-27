@@ -4,8 +4,6 @@ public class Task_1 {
     public static void main(String[] args) {
         int masInt []= {110, 1205, 80, 16, 449, 18, 50, 51330, 100, 60};
         double masDouble []= {-100.1, 25.0, 54.5, 1.0, -10.1, 0.5, 20.5, 10.7, -50.7, 10.3};
-        System.out.println(secondLargest(masInt));
-
     }
     public static int sum (int array[]){
         int m=0;
