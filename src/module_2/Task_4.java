@@ -8,24 +8,19 @@ public class Task_4 {
 
         String ownerName = "Oww";
         double withdrawal = 100;
-        System.out.println(ownerName+" "+balanceAfterFunding(ownerNames,ownerName,balances,withdrawal));
-
+       System.out.println(ownerName+" "+balanceAfterFunding(ownerNames,ownerName,balances,withdrawal));
     }
 
 
-    public static int balanceAfterFunding (String array[], String name, int balances[], double withdrawal){
+    public static double balanceAfterFunding (String array[], String name, int balances[], double withdrawal){
         int index=-1;
         for (int i=0; i<array.length; i++){
             if(name.equals(array[i])){
                 index=i;
             }
         }
-        for (int i=0; i<balances.length; i++){
-            if(index == i){
-                balances[i]+=withdrawal;
-            }
-        }
-        return balances[index];
+        double bal= balances[index]+withdrawal;
+        return bal;
         }
 
 }
