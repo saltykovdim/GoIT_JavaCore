@@ -8,12 +8,12 @@ public class Task_4 {
 
         String ownerName = "Oww";
         double withdrawal = 100;
-        balanceAfterFunding(ownerNames,ownerName,balances,withdrawal);
+        System.out.println(ownerName+" "+balanceAfterFunding(ownerNames,ownerName,balances,withdrawal));
 
     }
 
 
-    public static void balanceAfterFunding (String array[], String name, int balances[], double withdrawal){
+    public static int balanceAfterFunding (String array[], String name, int balances[], double withdrawal){
         int index=-1;
         for (int i=0; i<array.length; i++){
             if(name.equals(array[i])){
@@ -25,7 +25,7 @@ public class Task_4 {
                 balances[i]+=withdrawal;
             }
         }
-        System.out.println(name+" "+ balances[index]);
+        return balances[index];
         }
 
 }
