@@ -14,8 +14,6 @@ public class Task_2 {
     }
     static double withdrawBalance(double balance, double withdrawal) {
         double res= balance-(withdrawal+withdrawal*5/100);
-
-
         return res;
     }
 }
