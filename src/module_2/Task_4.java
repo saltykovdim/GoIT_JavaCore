@@ -19,8 +19,6 @@ public class Task_4 {
                 index=i;
             }
         }
-        double bal= balances[index]+withdrawal;
-        return bal;
-        }
-
+        return balances[index]+withdrawal;
+    }
 }
