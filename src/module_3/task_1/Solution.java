@@ -8,6 +8,6 @@ public class Solution extends Bird{
         second.walk();
         second.fly();
         second.sing();
-        second.WhoAreYou("Bird");
+        second.whoAreYou("Bird");
     }
 }

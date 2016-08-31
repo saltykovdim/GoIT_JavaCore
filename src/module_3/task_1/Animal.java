@@ -5,7 +5,7 @@ public class Animal{
     void walk() {
         System.out.println("I am walking");
     }
-    void WhoAreYou (String name){
+    void whoAreYou (String name){
         System.out.println("I am "+name);
     }
 }
