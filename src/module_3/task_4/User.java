@@ -66,7 +66,7 @@ public class User {
         this.currency = currency;
     }
     public void paySalary(){
-       setBalance(getBalance()+getSalary());
+       balance+=salary;
     }
    public int withdraw(int summ){
         if(summ<1000){
@@ -76,13 +76,9 @@ public class User {
         }
     }
     public int companyNameLength (String companyName){
-        int length=0;
-        for (int i=0; i<companyName.length(); i++){
-            length = i;
-        }
-        return length;
+        return companyName.length();
     }
     public void monthIncreaser(int addMonth){
-        setMonthsOfEmployment(getMonthsOfEmployment()+addMonth);
+       monthsOfEmployment+=addMonth;
     }
 }
