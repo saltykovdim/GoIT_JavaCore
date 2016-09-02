@@ -70,9 +70,9 @@ public class User {
     }
    public int withdraw(int summ){
         if(summ<1000){
-            return summ+summ*5/100;
+            return balance-(summ+summ*5/100);
         }else{
-            return summ+summ*10/100;
+            return balance-(summ+summ*10/100);
         }
     }
     public int companyNameLength (String companyName){
