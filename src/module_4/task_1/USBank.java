@@ -24,7 +24,7 @@ public class USBank extends Bank{
         if (getCurrency().equals(Currency.EUR)){
             result= 10000;
         }else if(getCurrency().equals(Currency.USD)){
-
+            //
         }
         return result;
     }
@@ -43,18 +43,18 @@ public class USBank extends Bank{
     }
 
     @Override
-    int getCommission(long totalCapital) {
+    int getCommission() {
         int result=0;
         if (getCurrency().equals(Currency.USD)) {
-            if(totalCapital < 1000 && totalCapital==1000){
+            if(getTotalCapital() < 1000 && getTotalCapital()==1000){
                 result = 5;
-            }else if (totalCapital>1000){
+            }else if (getTotalCapital()>1000){
                 result=7;
             }
         }else if(getCurrency().equals(Currency.EUR)){
-            if(totalCapital< 1000 && totalCapital==1000){
+            if(getTotalCapital()< 1000 && getTotalCapital()==1000){
                 result=6;
-            }else if(totalCapital>1000){
+            }else if(getTotalCapital()>1000){
                 result=8;
             }
         }
