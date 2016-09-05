@@ -1,7 +1,6 @@
 package module_4.task_1;
 
 
-import java.util.Currency;
 
 public abstract class Bank {
     private long id;
