@@ -1,8 +1,6 @@
 package module_4.task_1;
 
 
-import module_4.task_2.Currency;
-
 public abstract class Bank {
     private long id;
     private String bankCountry;
@@ -79,7 +77,7 @@ public abstract class Bank {
     }
     abstract int getLimitOfWithdrawal();
     abstract int getLimitOfFunding();
-    abstract int getMonthlyRate();
-    abstract int getCommission();
+    abstract double getMonthlyRate();
+    abstract int getCommission(long totalCapital);
     abstract double moneyPaidMonthlyForSalary();
 }

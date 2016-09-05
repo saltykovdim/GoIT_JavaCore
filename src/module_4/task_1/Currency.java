@@ -1,4 +1,4 @@
-package module_4.task_2;
+package module_4.task_1;
 
 
 public enum Currency {
