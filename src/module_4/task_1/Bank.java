@@ -1,6 +1,7 @@
 package module_4.task_1;
 
 
+import module_4.task_2.Currency;
 
 public abstract class Bank {
     private long id;

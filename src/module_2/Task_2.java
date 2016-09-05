@@ -3,7 +3,7 @@ package module_2;
 public class Task_2 {
     public static void main(String[] args) {
         double balance = 100;
-        double withdrawal = 950;
+        double withdrawal = 50;
         double comission = 5;
         double res=withdrawBalance(balance,withdrawal);
         if( res>0){
