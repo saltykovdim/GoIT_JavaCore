@@ -1,9 +1,5 @@
 package module_4.task_1;
 
-
-import static module_4.task_1.Currency.EUR;
-import static module_4.task_1.Currency.USD;
-
 public class USBank extends Bank{
     public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
