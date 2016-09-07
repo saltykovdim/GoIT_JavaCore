@@ -9,10 +9,12 @@ public class EUBank extends Bank {
     @Override
     int getLimitOfWithdrawal() {
         int result = 0;
-        switch (getCurrency()){
-            case USD: result=2000;
+        switch (getCurrency()) {
+            case USD:
+                result = 2000;
                 break;
-            case EUR: result=2200;
+            case EUR:
+                result = 2200;
                 break;
         }
         return result;
@@ -21,10 +23,12 @@ public class EUBank extends Bank {
     @Override
     int getLimitOfFunding() {
         int result = 0;
-        switch (getCurrency()){
-            case USD: result = 10000;
+        switch (getCurrency()) {
+            case USD:
+                result = 10000;
                 break;
-            case EUR: result = 20000;
+            case EUR:
+                result = 20000;
                 break;
         }
         return result;
@@ -33,10 +37,12 @@ public class EUBank extends Bank {
     @Override
     int getMonthlyRate() {
         int result = 0;
-        switch (getCurrency()){
-            case USD:result=0;
+        switch (getCurrency()) {
+            case USD:
+                result = 0;
                 break;
-            case EUR:result=1;
+            case EUR:
+                result = 1;
                 break;
         }
         return result;
@@ -44,21 +50,22 @@ public class EUBank extends Bank {
 
     @Override
     int getCommission(int summ) {
-        int result=0;
-        switch (getCurrency()){
+        int result = 0;
+        switch (getCurrency()) {
             case USD:
-                if(summ < 1000 && summ==1000){
+                if (summ < 1000 && summ == 1000) {
                     result = 5;
-                }else if (summ>1000){
-                    result=7;
+                } else if (summ > 1000) {
+                    result = 7;
                 }
                 break;
 
-            case EUR:   if(summ< 1000 && summ==1000){
-                result=2;
-            }else if(summ>1000) {
-                result = 4;
-            }
+            case EUR:
+                if (summ < 1000 && summ == 1000) {
+                    result = 2;
+                } else if (summ > 1000) {
+                    result = 4;
+                }
                 break;
         }
         return result;
