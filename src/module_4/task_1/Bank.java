@@ -68,9 +68,12 @@ public abstract class Bank {
 
     abstract int getLimitOfFunding();
 
-    abstract double getMonthlyRate();
+    abstract int getMonthlyRate();
 
     abstract int getCommission();
 
-    abstract double moneyPaidMonthlyForSalary();
+    double moneyPaidMonthlyForSalary( int numberOfEmployees,double avrSalaryOfEmployee){
+        return numberOfEmployees * avrSalaryOfEmployee;
+    }
+
 }

@@ -31,8 +31,8 @@ public class ChinaBank extends Bank{
     }
 
     @Override
-    double getMonthlyRate() {
-        double result = 0;
+    int getMonthlyRate() {
+        int result = 0;
         switch (getCurrency()){
             case USD:result=1;
                 break;
@@ -64,10 +64,5 @@ public class ChinaBank extends Bank{
         return result;
     }
 
-    @Override
-    double moneyPaidMonthlyForSalary() {
-        long result = (long)getAvrSalaryOfEmployee()+getTotalCapital();
-        setTotalCapital(result);
-        return result;
-    }
+
 }

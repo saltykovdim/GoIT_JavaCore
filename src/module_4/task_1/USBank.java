@@ -22,7 +22,7 @@ public class USBank extends Bank{
     int getLimitOfFunding() {
         int result = 0;
         switch (getCurrency()){
-            case USD:
+            case USD: result=Integer.MAX_VALUE;
                 break;
             case EUR: result = 10000;
                 break;
@@ -31,13 +31,13 @@ public class USBank extends Bank{
     }
 
     @Override
-    double getMonthlyRate() {
+    int getMonthlyRate() {
         //monthly rate - 1% with USD and 1.5% with EUR
-        double result = 0;
+        int result = 0;
         switch (getCurrency()){
             case USD:result=1;
                 break;
-            case EUR:result=1.5;
+            case EUR:result=2;
                 break;
         }
         return result;
@@ -65,10 +65,4 @@ public class USBank extends Bank{
         return result;
     }
 
-    @Override
-    double moneyPaidMonthlyForSalary() {
-        long result = (long)getAvrSalaryOfEmployee()+getTotalCapital();
-        setTotalCapital(result);
-        return result;
-    }
 }

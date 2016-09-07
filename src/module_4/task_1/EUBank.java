@@ -31,8 +31,8 @@ public class EUBank extends Bank {
     }
 
     @Override
-    double getMonthlyRate() {
-        double result = 0;
+    int getMonthlyRate() {
+        int result = 0;
         switch (getCurrency()){
             case USD:result=0;
                 break;
@@ -64,10 +64,5 @@ public class EUBank extends Bank {
         return result;
     }
 
-    @Override
-    double moneyPaidMonthlyForSalary() {
-        long result = (long)getAvrSalaryOfEmployee()+getTotalCapital();
-        setTotalCapital(result);
-        return result;
-    }
+
 }
