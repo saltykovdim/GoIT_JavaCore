@@ -43,26 +43,25 @@ public class ChinaBank extends Bank{
     }
 
     @Override
-    int getCommission() {
+    int getCommission(int summ) {
         int result=0;
         switch (getCurrency()){
             case USD:
-                if(getTotalCapital() < 1000 && getTotalCapital()==1000){
+                if(summ < 1000 && summ==1000){
                     result = 3;
-                }else if (getTotalCapital()>1000){
+                }else if (summ>1000){
                     result=5;
                 }
                 break;
 
-            case EUR:   if(getTotalCapital()< 1000 && getTotalCapital()==1000){
+            case EUR:   if(summ< 1000 && summ==1000){
                 result=10;
-            }else if(getTotalCapital()>1000) {
+            }else if(summ>1000) {
                 result = 11;
             }
                 break;
         }
         return result;
     }
-
 
 }
