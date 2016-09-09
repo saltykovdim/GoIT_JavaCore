@@ -6,6 +6,11 @@ public class USBank extends Bank {
     }
 
     @Override
+    public String toString() {
+        return "USBank";
+    }
+
+    @Override
     int getLimitOfWithdrawal() {
         //1000 if currency is USD and 1200 if currency is EUR
         int result = 0;
