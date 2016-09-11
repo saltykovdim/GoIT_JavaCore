@@ -3,7 +3,7 @@ package module_4.task_1;
 
 public class Main {
     public static void main(String[] args) {
-        BankSystemImpl bank = new BankSystemImpl();
+        BankSystem bank = new BankSystemImpl();
 
         Bank usBankUsd = new USBank(123, "german", Currency.USD, 123, 12.0, 1000, 10000);
         Bank usBankEur = new USBank(1234, "china", Currency.EUR, 1234, 10, 1100, 11000);
@@ -19,6 +19,12 @@ public class Main {
         User userH = new User(5, "dxcgv", 10000, 20, "Yandex", 30, euBankEur);
         User userG = new User(6, "dsfghn", 10000, 15, "GMail", 35, chinaBankUsd);
         bank.transferMoney(userB, userA, 1000);
+        System.out.println(userD.getBalance());
+        bank.paySalary(userD);
+        System.out.println(userD.getBalance());
+        System.out.println();
+        bank.fundUser(userC, 5123);
+        System.out.println();
         System.out.println(userA.getBalance());
         System.out.println(userB.getBalance());
 

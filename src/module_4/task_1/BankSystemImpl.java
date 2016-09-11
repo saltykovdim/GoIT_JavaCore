@@ -18,8 +18,9 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void fundUser(User user, int amount) {
-        user.getId();
-        user.getBalance();
+
+
+        System.out.println(user.getId()+" "+ user.getBalance());
     }
 
     @Override
