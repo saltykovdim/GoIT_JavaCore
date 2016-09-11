@@ -26,7 +26,6 @@ public class BankSystemImpl implements BankSystem {
             fromUser.setBalance(fromUser.getBalance() - amount);
             toUser.setBalance(toUser.getBalance() + amount);
         }
-
     }
 
     @Override
