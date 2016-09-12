@@ -3,7 +3,7 @@ package module_5;
 
 import java.util.Date;
 
-public abstract class Room {
+public class Room {
     private long id;
     private int price;
     private int persons;
@@ -66,5 +66,35 @@ public abstract class Room {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int)getId();
+        result = prime * result + (int)getId();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null)
+        {
+            return false;
+        }
+        if (o == this)
+        {
+            return true;
+        }
+        if (getClass() != o.getClass())
+        {
+            return false;
+        }
+        if(getPrice()==getPersons() && getCityName().equals(getPersons())){
+            return true;
+        }
+            Room e = (Room) o;
+        return (this.getId() == e.getId());
     }
 }
