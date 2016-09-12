@@ -72,29 +72,26 @@ public class Room {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int)getId();
-        result = prime * result + (int)getId();
+        result = prime * result + (int) getId();
+        result = prime * result + (int) getId();
         return result;
     }
 
     @Override
     public boolean equals(Object o) {
-        if(o == null)
-        {
+        if (o == null) {
             return false;
         }
-        if (o == this)
-        {
+        if (o == this) {
             return true;
         }
-        if (getClass() != o.getClass())
-        {
+        if (getClass() != o.getClass()) {
             return false;
         }
-        if(getPrice()==getPersons() && getCityName().equals(getPersons())){
+        if (getPrice() == getPersons() && getCityName().equals(getPersons())) {
             return true;
         }
-            Room e = (Room) o;
+        Room e = (Room) o;
         return (this.getId() == e.getId());
     }
 }
