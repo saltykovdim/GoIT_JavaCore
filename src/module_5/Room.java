@@ -7,9 +7,10 @@ public class Room {
     private long id;
     private int price;
     private int persons;
-    private Date dateAvailableFrom;
+    Date dateAvailableFrom;
     private String hotelName;
     private String cityName;
+
 
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
