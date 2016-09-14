@@ -76,11 +76,8 @@ public class Room {
 
         Room room = (Room) o;
 
-        if (getId() != room.getId()) return false;
         if (getPrice() != room.getPrice()) return false;
         if (getPersons() != room.getPersons()) return false;
-        if (!getDateAvailableFrom().equals(room.getDateAvailableFrom())) return false;
-        if (!getHotelName().equals(room.getHotelName())) return false;
         return getCityName().equals(room.getCityName());
 
     }
