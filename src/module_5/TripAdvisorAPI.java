@@ -4,6 +4,10 @@ package module_5;
 import java.util.Date;
 
 public class TripAdvisorAPI implements API {
+    public TripAdvisorAPI(Room[] rooms) {
+        this.rooms = rooms;
+    }
+
     Room[] rooms = new Room[5];
 
     @Override
