@@ -70,29 +70,29 @@ public class Room {
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + (int) getId();
-        result = prime * result + (int) getId();
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room)) return false;
+
+        Room room = (Room) o;
+
+        if (getId() != room.getId()) return false;
+        if (getPrice() != room.getPrice()) return false;
+        if (getPersons() != room.getPersons()) return false;
+        if (!getDateAvailableFrom().equals(room.getDateAvailableFrom())) return false;
+        if (!getHotelName().equals(room.getHotelName())) return false;
+        return getCityName().equals(room.getCityName());
+
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o == null) {
-            return false;
-        }
-        if (o == this) {
-            return true;
-        }
-        if (getClass() != o.getClass()) {
-            return false;
-        }
-        if (getPrice() == getPersons() && getCityName().equals(getPersons())) {
-            return true;
-        }
-        Room e = (Room) o;
-        return (this.getId() == e.getId());
+    public int hashCode() {
+        int result = (int) (getId() ^ (getId() >>> 32));
+        result = 31 * result + getPrice();
+        result = 31 * result + getPersons();
+        result = 31 * result + getDateAvailableFrom().hashCode();
+        result = 31 * result + getHotelName().hashCode();
+        result = 31 * result + getCityName().hashCode();
+        return result;
     }
 }
