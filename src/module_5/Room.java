@@ -87,8 +87,6 @@ public class Room {
         int result = (int) (getId() ^ (getId() >>> 32));
         result = 31 * result + getPrice();
         result = 31 * result + getPersons();
-        result = 31 * result + getDateAvailableFrom().hashCode();
-        result = 31 * result + getHotelName().hashCode();
         result = 31 * result + getCityName().hashCode();
         return result;
     }
