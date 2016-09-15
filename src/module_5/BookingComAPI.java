@@ -6,12 +6,7 @@ import java.util.Date;
 public class BookingComAPI implements API {
     Room[] rooms = new Room[5];
 
-    public BookingComAPI(Room[] rooms) {
-        this.rooms = rooms;
-    }
-
-    @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
+    public BookingComAPI() {
         Date someDate = new Date();
         Room room1 = new Room(11, 425, 2, someDate, "Inturist", "Kiev");
         rooms[0] = room1;
@@ -23,6 +18,11 @@ public class BookingComAPI implements API {
         rooms[3] = room4;
         Room room5 = new Room(15, 500, 4, someDate, "Inturist", "Kiev");
         rooms[4] = room5;
+    }
+
+    @Override
+    public Room[] findRooms(int price, int persons, String city, String hotel) {
+
 
         return rooms;
     }
