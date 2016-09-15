@@ -6,12 +6,7 @@ import java.util.Date;
 public class GoogleAPI implements API {
     Room[] rooms = new Room[5];
 
-    public GoogleAPI(Room[] rooms) {
-        this.rooms = rooms;
-    }
-
-    @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
+    public GoogleAPI() {
         Date someDate = new Date();
         Room room1 = new Room(31, 525, 2, someDate, "MIRGOROD", "Lviv");
         rooms[0] = room1;
@@ -23,6 +18,10 @@ public class GoogleAPI implements API {
         rooms[3] = room4;
         Room room5 = new Room(35, 700, 4, someDate, "MIRGOROD", "Lviv");
         rooms[4] = room5;
+    }
+
+    @Override
+    public Room[] findRooms(int price, int persons, String city, String hotel) {
         return rooms;
     }
 }
