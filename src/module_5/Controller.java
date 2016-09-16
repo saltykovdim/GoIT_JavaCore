@@ -5,12 +5,9 @@ public class Controller {
     private API[] apis = new API[3];
 
     public Controller() {
-        API book = new BookingComAPI();
-        apis[0] = book;
-        API google = new GoogleAPI();
-        apis[1] = google;
-        API trip = new TripAdvisorAPI();
-        apis[2] = trip;
+        apis[0] = new BookingComAPI();
+        apis[1] = new GoogleAPI();
+        apis[2] = new TripAdvisorAPI();
     }
 
     Room[] requstRooms(int price, int persons, String city, String hotel) {
