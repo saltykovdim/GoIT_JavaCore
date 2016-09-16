@@ -38,6 +38,6 @@ public class Controller {
                 count++;
             }
         }
-            return rooms;
-        }
+        return rooms;
     }
+}
