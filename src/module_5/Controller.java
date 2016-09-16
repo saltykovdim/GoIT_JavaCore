@@ -14,12 +14,10 @@ public class Controller {
         Room[] room1 = apis[0].findRooms(price, persons, city, hotel);
         Room[] room2 = apis[1].findRooms(price, persons, city, hotel);
         Room[] room3 = apis[2].findRooms(price, persons, city, hotel);
-
         int count = 0;
         Room[] rooms = new Room[count];
         if (room1.length > 0) {
             for (int i = 0; i < room1.length; i++) {
-
                 count++;
             }
         }
