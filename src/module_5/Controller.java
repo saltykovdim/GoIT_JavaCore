@@ -10,29 +10,30 @@ public class Controller {
         apis[2] = new TripAdvisorAPI();
     }
 
-    Room[] requstRooms(int price, int persons, String city, String hotel) {
+    public Room[] requstRooms(int price, int persons, String city, String hotel) {
+        int count = 0;
         Room[] room1 = apis[0].findRooms(price, persons, city, hotel);
         Room[] room2 = apis[1].findRooms(price, persons, city, hotel);
         Room[] room3 = apis[2].findRooms(price, persons, city, hotel);
-        int count = 0;
+        count=room1.length + room2.length + room3.length;
         Room[] rooms = new Room[count];
-        if (room1.length > 0) {
-            for (int i = 0; i < room1.length; i++) {
-                count++;
+        for(int i=0; i<rooms.length;i++){
+            for (int room1i = 0; i < room1.length; i++) {
+                rooms[i]=room1[room1i];
+            }
+            for (int room2i = 0; i < room2.length; i++) {
+                rooms[i]=room2[room2i];
+            }
+            for (int room3i = 0; i < room3.length; i++) {
+                rooms[i]=room3[room3i];
             }
         }
-        if (room2.length > 0) {
-            for (int i = 0; i < room2.length; i++) {
-                rooms[count] = room1[i];
-                count++;
-            }
-        }
-        if (room3.length > 0) {
-            for (int i = 0; i < room3.length; i++) {
-                rooms[count] = room1[i];
-                count++;
-            }
-        }
-        return rooms;
+       return rooms;
+    }
+
+
+    public Room[] check(API api1, API api2) {
+
+        return null;
     }
 }
