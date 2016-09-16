@@ -18,13 +18,13 @@ public class Controller {
         count = room1.length + room2.length + room3.length;
         Room[] rooms = new Room[count];
         for (int i = 0; i < rooms.length; i++) {
-            for (int room1i = 0; i < room1.length; i++) {
+            for (int room1i = 0; i < room1.length; room1i++) {
                 rooms[i] = room1[room1i];
             }
-            for (int room2i = 0; i < room2.length; i++) {
+            for (int room2i = 0; i < room2.length; room2i++) {
                 rooms[i] = room2[room2i];
             }
-            for (int room3i = 0; i < room3.length; i++) {
+            for (int room3i = 0; i < room3.length; room3i++) {
                 rooms[i] = room3[room3i];
             }
         }
