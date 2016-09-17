@@ -17,16 +17,18 @@ public class Controller {
         Room[] room3 = apis[2].findRooms(price, persons, city, hotel);
         count = room1.length + room2.length + room3.length;
         Room[] rooms = new Room[count];
-        for (int i = 0; i < rooms.length; i++) {
-            for (int room1i = 0; i < room1.length; room1i++) {
-                rooms[i] = room1[room1i];
-            }
-            for (int room2i = 0; i < room2.length; room2i++) {
-                rooms[i] = room2[room2i];
-            }
-            for (int room3i = 0; i < room3.length; room3i++) {
-                rooms[i] = room3[room3i];
-            }
+        int i = 0;
+        for (int room1i = 0; room1i < room1.length; room1i++) {
+            rooms[i] = room1[room1i];
+            i++;
+        }
+        for (int room2i = 0; room2i < room2.length; room2i++) {
+            rooms[i] = room2[room2i];
+            i++;
+        }
+        for (int room3i = 0; room3i < room3.length; room3i++) {
+            rooms[i] = room3[room3i];
+            i++;
         }
         return rooms;
     }
