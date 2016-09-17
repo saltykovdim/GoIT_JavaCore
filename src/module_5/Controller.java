@@ -35,7 +35,22 @@ public class Controller {
 
 
     public Room[] check(API api1, API api2) {
-
-        return null;
+        Room[] res = new Room[10];
+        int i = 0;
+        int price = 150;
+        int person = 2;
+        Room[] res1 = api1.findRooms(price, person, null, null);
+        Room[] res2 = api2.findRooms(price, person, null, null);
+        if (res1.equals(res2)) {
+            for (int q = 0; q < res1.length; q++) {
+                res[i] = res1[q];
+                i++;
+            }
+            for (int w = 0; w < res2.length; w++) {
+                res[i] = res2[w];
+                i++;
+            }
+        }
+        return res;
     }
 }
