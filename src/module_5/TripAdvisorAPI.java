@@ -8,7 +8,7 @@ public class TripAdvisorAPI implements API {
 
     public TripAdvisorAPI() {
         Date someDate = new Date();
-        Room room1 = new Room(21, 625, 2, someDate, "Sputnic", "Dnepr");
+        Room room1 = new Room(21, 100, 2, someDate, "Sputnic", "Dnepr");
         rooms[0] = room1;
         Room room2 = new Room(22, 550, 2, someDate, "Sputnic", "Dnepr");
         rooms[1] = room2;
@@ -22,6 +22,15 @@ public class TripAdvisorAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return rooms;
+        Room find = new Room(0, price, persons, new Date(), city, hotel);
+        int i = 0;
+        Room[] result = new Room[rooms.length];
+        for (int ii = 0; ii < rooms.length; ii++) {
+            if (find.equals(rooms[ii])) {
+                result[i] = rooms[ii];
+                i++;
+            }
+        }
+        return result;
     }
 }

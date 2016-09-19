@@ -17,7 +17,7 @@ public class DAOImpl implements DAO {
 
     @Override
     public Room update(Room room) {
-        System.out.println("your room " + room + " update");
+        System.out.println("your room " + room.toString() + " update");
         return room;
     }
 
