@@ -1,7 +1,5 @@
 package module_5;
 
-import java.util.Arrays;
-
 public class Controller {
     private API[] apis = new API[3];
 
@@ -36,23 +34,26 @@ public class Controller {
 
 
     public Room[] check(API api1, API api2) {
-        Room[] res = new Room[10];
         int i = 0;
         int price = 500;
         int person = 2;
         Room[] res1 = api1.findRooms(price, person, "Inturist", "Kiev");
-        Room[] res2 = api2.findRooms(price, person, "MIRGOROD", "Lviv");
-
-        if (Arrays.equals(res1, res2)) {
-            for (int q = 0; q < res1.length; q++) {
-                res[i] = res1[q];
-                i++;
-            }
-            for (int w = 0; w < res2.length; w++) {
-                res[i] = res2[w];
+        Room[] res2 = api2.findRooms(price, person, "Sputnic", "Dnepr");
+        int len = res1.length + res2.length;
+        Room[] res = new Room[len];
+        if (res1.length > 0) {
+            for (int ii = 0; ii < res1.length; ii++) {
+                res[i] = res1[ii];
                 i++;
             }
         }
+        if (res2.length > 0) {
+            for (int ii = 0; ii < res2.length; ii++) {
+                res[i] = res2[ii];
+                i++;
+            }
+        }
+
 
         return res;
     }

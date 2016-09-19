@@ -23,8 +23,14 @@ public class GoogleAPI implements API {
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room find = new Room(0, price, persons, new Date(), city, hotel);
+        int count = 0;
         int i = 0;
-        Room[] result = new Room[rooms.length];
+        for (int ii = 0; ii < rooms.length; ii++) {
+            if (find.equals(rooms[ii])) {
+                count++;
+            }
+        }
+        Room[] result = new Room[count];
         for (int ii = 0; ii < rooms.length; ii++) {
             if (find.equals(rooms[ii])) {
                 result[i] = rooms[ii];

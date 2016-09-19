@@ -6,7 +6,10 @@ public class Main {
         API api2 = new TripAdvisorAPI();
         API api3 = new GoogleAPI();
         Controller cont = new Controller();
-        cont.check(api1, api2);
+        Room[] result = cont.check(api1, api2);
+        for (int i=0; i<result.length; i++){
+            System.out.println(result[i]);
+        }
         cont.check(api2, api3);
 
     }
