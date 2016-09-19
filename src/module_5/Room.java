@@ -89,8 +89,19 @@ public class Room {
         Room room = (Room) o;
 
         if (getPrice() != room.getPrice()) return false;
+
         if (getPersons() != room.getPersons()) return false;
-        return getCityName().equals(room.getCityName());
+
+        if (getHotelName() != null){
+            if(getHotelName().equals(room.getHotelName())){
+                return true;
+            }
+        }
+        if (getPrice()!= 0 && getPersons()!=0){
+            if(getPrice() == room.getPrice() && getPersons() == room.getPersons())
+            return true;
+        }
+        return getCityName() != null ? !getCityName().equals(room.getCityName()) : room.getCityName() != null;
 
     }
 

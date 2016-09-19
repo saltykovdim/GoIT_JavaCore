@@ -37,8 +37,8 @@ public class Controller {
         int i = 0;
         int price = 500;
         int person = 2;
-        Room[] res1 = api1.findRooms(price, person, "Inturist", "Kiev");
-        Room[] res2 = api2.findRooms(price, person, "Sputnic", "Dnepr");
+        Room[] res1 = api1.findRooms(price, person, null, null);
+        Room[] res2 = api2.findRooms(price, person, null, null);
         int len = res1.length + res2.length;
         Room[] res = new Room[len];
         if (res1.length > 0) {
