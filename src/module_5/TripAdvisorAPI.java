@@ -8,15 +8,15 @@ public class TripAdvisorAPI implements API {
 
     public TripAdvisorAPI() {
         Date someDate = new Date();
-        Room room1 = new Room(21, 100, 2, someDate, "Sputnic", "Dnepr");
+        Room room1 = new Room(21,500, 2, someDate, "Sputnic", "Dnepr");
         rooms[0] = room1;
-        Room room2 = new Room(22, 550, 2, someDate, "Sputnic", "Dnepr");
+        Room room2 = new Room(22, 500, 2, someDate, "MIRGOROD", "Lviv");
         rooms[1] = room2;
-        Room room3 = new Room(23, 650, 1, someDate, "Sputnic", "Dnepr");
+        Room room3 = new Room(23, 500, 2, someDate, "Inturist", "Kiev");
         rooms[2] = room3;
         Room room4 = new Room(24, 500, 2, someDate, "Sputnic", "Dnepr");
         rooms[3] = room4;
-        Room room5 = new Room(25, 800, 4, someDate, "Sputnic", "Dnepr");
+        Room room5 = new Room(25, 5000, 4, someDate, "Sputnic", "Dnepr");
         rooms[4] = room5;
     }
 
@@ -38,5 +38,10 @@ public class TripAdvisorAPI implements API {
             }
         }
         return result;
+    }
+
+    @Override
+    public Room[] getAll() {
+        return rooms;
     }
 }

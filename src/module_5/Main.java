@@ -10,7 +10,7 @@ public class Main {
         for (int i=0; i<result.length; i++){
             System.out.println(result[i]);
         }
-        cont.check(api2, api3);
+        //cont.check(api2, api3);
 
     }
 }
