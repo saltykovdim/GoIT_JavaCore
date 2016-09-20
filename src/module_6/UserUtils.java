@@ -27,7 +27,14 @@ public class UserUtils {
     }
 
     final User[] paySalaryToUsers(User[] users) {
-        return null;
+        User user = new User(0, null, null, 0, 0);
+
+        for (int i = 0; i < users.length; i++) {
+            user = users[i];
+            user.setBalance(user.getSalary() + user.getBalance());
+            users[i] = user;
+        }
+        return users;
     }
 
     final long[] getUsersId(User[] users) {
