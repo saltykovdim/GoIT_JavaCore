@@ -1,7 +1,7 @@
 package module_6;
 
 
-public class ArraysUtils {
+public final class ArraysUtils {
     int[] sum(int array[]) {
         return null;
     }
@@ -33,8 +33,8 @@ public class ArraysUtils {
     final int[] reverse(int[] array) {
         int count = 0;
         int[] result = new int[array.length];
-        for (int i=array.length-1; i>-1; i--){
-            result[count]=array[i];
+        for (int i = array.length - 1; i > -1; i--) {
+            result[count] = array[i];
             count++;
         }
         return result;
