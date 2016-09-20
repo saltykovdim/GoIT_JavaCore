@@ -18,7 +18,10 @@ public class Main {
         UserUtils userUtils = new UserUtils();
         userUtils.getUsersId(users);
         userUtils.deleteEmptyUsers(users);
-
+User[] ress = userUtils.usersWithContitionalBalance(users, 10000);
+        for (int i=0; i<ress.length; i++) {
+            System.out.println(ress[i]);
+        }
     }
 
 }
