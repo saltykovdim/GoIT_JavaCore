@@ -30,7 +30,7 @@ public class ArraysUtils {
         return null;
     }
 
-    int[] reverse(int[] array) {
+    final int[] reverse(int[] array) {
         int count = 0;
         int[] result = new int[array.length];
         for (int i=array.length-1; i>-1; i--){
