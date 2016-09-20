@@ -2,32 +2,70 @@ package module_6;
 
 
 public final class ArraysUtils {
-    int[] sum(int array[]) {
-        return null;
+    int sum(int array[]) {
+        int m = 0;
+        for (int i = 0; i < array.length; i++) {
+            m += array[i];
+        }
+        return m;
     }
 
-    int[] min(int array[]) {
-        return null;
+    int min(int array[]) {
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
     }
 
-    int[] max(int array[]) {
-        return null;
+    int max(int array[]) {
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
     }
 
-    int[] maxPositive(int array[]) {
-        return null;
+    int maxPositive(int array[]) {
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0 && array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
     }
 
-    int[] multiplication(int array[]) {
-        return null;
+    int multiplication(int array[]) {
+        int m = array[0];
+        for (int i = 1; i < array.length; i++) {
+            m *= array[i];
+        }
+        return m;
     }
 
-    int[] modulus(int array[]) {
-        return null;
+    int modulus(int array[]) {
+        return array[0] % array.length;
     }
 
-    int[] secondLargest(int array[]) {
-        return null;
+    int secondLargest(int array[]) {
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0 && array[i] > max) {
+                max = array[i];
+            }
+        }
+        int s = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < max && array[i] > s) {
+                s = array[i];
+            }
+        }
+        return s;
     }
 
     final int[] reverse(int[] array) {
