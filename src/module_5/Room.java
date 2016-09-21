@@ -84,25 +84,15 @@ public class Room {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Room)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Room room = (Room) o;
 
-        if (getPrice() != room.getPrice()) return false;
-
-        if (getPersons() != room.getPersons()) return false;
-
-        if (getHotelName() != null){
-            if(getHotelName().equals(room.getHotelName())){
-                return true;
-            }
-        }
-        if (getPrice()!= 0 && getPersons()!=0){
-            if(getPrice() == room.getPrice() && getPersons() == room.getPersons())
-            return true;
-        }
-        return getCityName() != null ? !getCityName().equals(room.getCityName()) : room.getCityName() != null;
-
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        if (hotelName != null ? !hotelName.equals(room.hotelName) : room.hotelName != null) return false;
+        if (cityName != null ? !cityName.equals(room.cityName) : room.cityName != null) return false;
+        return true;
     }
 
     @Override
