@@ -2,7 +2,7 @@ package module_6;
 
 
 public final class ArraysUtils {
-    int sum(int array[]) {
+    public static int sum(int array[]) {
         int m = 0;
         for (int i = 0; i < array.length; i++) {
             m += array[i];
@@ -10,7 +10,7 @@ public final class ArraysUtils {
         return m;
     }
 
-    int min(int array[]) {
+    public static int min(int array[]) {
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
@@ -20,7 +20,7 @@ public final class ArraysUtils {
         return min;
     }
 
-    int max(int array[]) {
+    public static int max(int array[]) {
         int max = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
@@ -30,7 +30,7 @@ public final class ArraysUtils {
         return max;
     }
 
-    int maxPositive(int array[]) {
+    public static int maxPositive(int array[]) {
         int max = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0 && array[i] > max) {
@@ -40,7 +40,7 @@ public final class ArraysUtils {
         return max;
     }
 
-    int multiplication(int array[]) {
+    public static int multiplication(int array[]) {
         int m = array[0];
         for (int i = 1; i < array.length; i++) {
             m *= array[i];
@@ -48,11 +48,11 @@ public final class ArraysUtils {
         return m;
     }
 
-    int modulus(int array[]) {
+    public static int modulus(int array[]) {
         return array[0] % array.length;
     }
 
-    int secondLargest(int array[]) {
+    public static int secondLargest(int array[]) {
         int max = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0 && array[i] > max) {
@@ -68,7 +68,7 @@ public final class ArraysUtils {
         return s;
     }
 
-    final int[] reverse(int[] array) {
+    public final static  int[] reverse(int[] array) {
         int count = 0;
         int[] result = new int[array.length];
         for (int i = array.length - 1; i > -1; i--) {
@@ -78,7 +78,7 @@ public final class ArraysUtils {
         return result;
     }
 
-    final int[] findEvenElements(int[] array) {
+    public final static int[] findEvenElements(int[] array) {
         int count = 0;
         int ii = 0;
         for (int i = 0; i < array.length; i++) {
