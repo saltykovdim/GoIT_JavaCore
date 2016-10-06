@@ -1,7 +1,7 @@
 package module_7;
 
 
-public class Order {
+public class Order implements Comparable<Order>{
     private long id;
     private int price;
     private Currency currency;
@@ -95,4 +95,20 @@ public class Order {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        return price - o.getPrice();
+    }
 }

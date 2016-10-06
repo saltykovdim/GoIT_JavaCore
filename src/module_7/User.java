@@ -82,4 +82,15 @@ public class User {
         result = 31 * result + getBalance();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }
