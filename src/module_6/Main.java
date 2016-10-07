@@ -1,11 +1,16 @@
 package module_6;
 
 
+import java.util.Queue;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         ArraysUtils array = new ArraysUtils();
         int [] res = {8, 10, 2, 5, 50};
-    res=array.reverse(res);
+        res=array.reverse(res);
         res=array.findEvenElements(res);
         for (int i=0; i<res.length; i++){
             System.out.println(res[i]);
@@ -18,10 +23,9 @@ public class Main {
         UserUtils userUtils = new UserUtils();
         userUtils.getUsersId(users);
         userUtils.deleteEmptyUsers(users);
-User[] ress = userUtils.paySalaryToUsers(users);
+        User[] ress = userUtils.paySalaryToUsers(users);
         for (int i=0; i<ress.length; i++) {
             System.out.println(ress[i]);
         }
     }
-
 }

@@ -1,17 +1,18 @@
-package module_6;
+package module_7;
+
 
 public class User {
     private long id;
     private String firstName;
     private String lastName;
-    private int salary;
+    private String city;
     private int balance;
 
-    public User(long id, String firstName, String lastName, int salary, int balance) {
+    public User(long id, String firstName, String lastName, String city, int balance) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.salary = salary;
+        this.city = city;
         this.balance = balance;
     }
 
@@ -19,16 +20,32 @@ public class User {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public int getSalary() {
-        return salary;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public int getBalance() {
@@ -46,17 +63,13 @@ public class User {
 
         User user = (User) o;
 
-        if (getId() == user.getId() && getLastName().equals(user.getLastName())) {
-            if (getFirstName().equals(user.getFirstName()) && getSalary() == user.getSalary()) {
-                if (getBalance() == user.getBalance()) return true;
-            }
-        }
         if (getId() != user.getId()) return false;
-        if (getSalary() != user.getSalary()) return false;
         if (getBalance() != user.getBalance()) return false;
         if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) : user.getFirstName() != null)
             return false;
-        return getLastName() != null ? getLastName().equals(user.getLastName()) : user.getLastName() == null;
+        if (getLastName() != null ? !getLastName().equals(user.getLastName()) : user.getLastName() != null)
+            return false;
+        return getCity() != null ? getCity().equals(user.getCity()) : user.getCity() == null;
 
     }
 
@@ -65,7 +78,7 @@ public class User {
         int result = (int) (getId() ^ (getId() >>> 32));
         result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
         result = 31 * result + (getLastName() != null ? getLastName().hashCode() : 0);
-        result = 31 * result + getSalary();
+        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
         result = 31 * result + getBalance();
         return result;
     }
@@ -76,7 +89,7 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", salary=" + salary +
+                ", city='" + city + '\'' +
                 ", balance=" + balance +
                 '}';
     }
