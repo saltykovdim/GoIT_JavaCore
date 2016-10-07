@@ -8,7 +8,7 @@ public class Main {
         User user1 = new User(1, "first", "first", "kiev", 100);
         listOrders.add(new Order(1, 500, Currency.UAH, "pencil", "Active", user1));
         User user2 = new User(2, "first", "second", "kievv", 1000);
-        listOrders.add(new Order(2, 500, Currency.UAH, "pencil", "Active", user2));
+        listOrders.add(new Order(2, 500, Currency.UAH, "pencil", "No Active", user2));
         User user3 = new User(1, "first", "first", "odessa", 100);
         listOrders.add(new Order(1, 500, Currency.UAH, "pencil", "No Active", user3));
         User user4 = new User(4, "first", "four", "kieeeeeeeeeeeev", 10000);
@@ -26,17 +26,23 @@ public class Main {
         User user10 = new User(10, "first", "first", "kiev", 100);
         listOrders.add(new Order(10, 50, Currency.UAH, "pen", "Active", user10));
         // listOrders.getClass();
-        System.out.println(listOrders);
+        //System.out.println(listOrders);
         //listOrders.sort(Comparator.naturalOrder());
-       // System.out.println(listOrders);
+        // System.out.println(listOrders);
         //listOrders.sort(new SortPriceCity());
         //System.out.println(listOrders);
-        listOrders.sort(new SortItemNameShopCity());
+        //  listOrders.sort(new SortItemNameShopCity());
+        //  System.out.println(listOrders);
+        DelItemPriceLess del = new DelItemPriceLess();
+        List<Order> wed = del.delPrice(listOrders);
+        System.out.println(wed);
+        listOrders=(new SeparateUniqueCity().city(listOrders));
         System.out.println(listOrders);
 
-
-
+        //  Set list = new HashSet(listOrders);
+        // System.out.println(list);
 
     }
+
 
 }
