@@ -12,7 +12,6 @@ public class SortItemNameShopCity implements Comparator<Order>{
                 return o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
         }
-
         return res;
     }
 }
