@@ -45,6 +45,16 @@ public class Main {
         return resultUSD;
     }
 
+    public static boolean checkUserLastName(Set<Order> list, String name) {
+        Iterator<Order> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getUser().getLastName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         List<Order> listOrders = new ArrayList();
         User user1 = new User(1, "first", "first", "kiev", 100);
@@ -104,29 +114,41 @@ public class Main {
         System.out.println(separateUniqueCity(listOrders));
         System.out.println();
 
-        Set list = new HashSet(listOrders);
-        System.out.println(list);
+        // Set list = new HashSet(listOrders);
+        //System.out.println(list);
         Set<Order> orderSet = new TreeSet<>();
-        User user11 = new User(1, "first", "first", "Petrov", 100);
-        orderSet.add(new Order(1, 500, Currency.UAH, "pencil", "Active", user11));
+        User user11 = new User(1, "first", "Petrov", "Petrov", 100);
+        orderSet.add(new Order(1, 5, Currency.USD, "pencil", "Active", user11));
         User user12 = new User(2, "first", "first", "kiev", 100);
-        orderSet.add(new Order(2, 500, Currency.UAH, "pencil", "Active", user12));
+        orderSet.add(new Order(2, 50, Currency.USD, "pencil", "Active", user12));
         User user13 = new User(3, "firstt", "firstt", "Doneck", 100);
         orderSet.add(new Order(3, 500, Currency.USD, "pencils", "Active", user13));
         User user14 = new User(4, "two", "two", "lviv", 100);
-        orderSet.add(new Order(4, 500, Currency.UAH, "pen", "Active", user14));
+        orderSet.add(new Order(4, 600, Currency.USD, "pen", "Active", user14));
         User user15 = new User(5, "twof", "twof", "odessa", 100);
-        orderSet.add(new Order(5, 500, Currency.UAH, "pen", "Active", user15));
+        orderSet.add(new Order(5, 60, Currency.UAH, "pen", "Active", user15));
         User user16 = new User(6, "ttwof", "ttwof", "kiev", 100);
-        orderSet.add(new Order(6, 500, Currency.USD, "pen", "Active", user16));
+        orderSet.add(new Order(6, 6, Currency.USD, "pen", "Active", user16));
         User user17 = new User(7, "twof", "twof", "odessa", 100);
-        orderSet.add(new Order(7, 500, Currency.USD, "pen", "Active", user17));
+        orderSet.add(new Order(7, 70000000, Currency.USD, "pen", "Active", user17));
         User user18 = new User(8, "twoft", "twoft", "odessa", 100);
-        orderSet.add(new Order(8, 500, Currency.UAH, "box", "Active", user18));
+        orderSet.add(new Order(8, 70, Currency.USD, "box", "Active", user18));
         User user19 = new User(9, "twof", "twof", "bahmut", 100);
-        orderSet.add(new Order(9, 500, Currency.USD, "box+pen", "Active", user19));
+        orderSet.add(new Order(9, 7000, Currency.USD, "box+pen", "Active", user19));
         User user20 = new User(10, "twof", "twof", "odessa", 100);
-        orderSet.add(new Order(10, 500, Currency.UAH, "box+pen", "Active", user20));
+        orderSet.add(new Order(10, 800, Currency.USD, "box+pen", "Active", user20));
+
+        //System.out.println(checkUserLastName(orderSet, "Petrov"));
+        
+        System.out.println();
+
+        Iterator<Order> iterator = orderSet.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getCurrency().equals(Currency.UAH)) {
+                iterator.remove();
+            }
+        }
+        System.out.println(orderSet);
 
 
     }
