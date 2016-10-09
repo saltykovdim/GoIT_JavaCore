@@ -1,9 +1,11 @@
 package module_5;
 
 
-public interface API {
-    Room[] findRooms(int price, int persons, String city, String hotel);
+import java.util.ArrayList;
 
-    Room[] getAll();
+public interface API {
+    ArrayList<Room> findRooms(int price, int persons, String city, String hotel);
+
+    ArrayList<Room> getAll();
 
 }
