@@ -1,5 +1,7 @@
 package module_7;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 import java.util.*;
 
 public class Main {
@@ -79,7 +81,7 @@ public class Main {
         listOrders.add(new Order(10, 50, Currency.UAH, "pen", "Active", user10));
 
         listOrders.sort(Comparator.naturalOrder());
-        System.out.println();
+        //  System.out.println();
         listOrders.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -90,7 +92,7 @@ public class Main {
                 return res;
             }
         });
-        System.out.println(listOrders);
+        //System.out.println(listOrders);
         listOrders.sort(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -104,7 +106,7 @@ public class Main {
                 return res;
             }
         });
-        System.out.println(listOrders);
+      /*  System.out.println(listOrders);
         System.out.println(sepUAH(listOrders));
         System.out.println();
         System.out.println(sepUSD(listOrders));
@@ -113,10 +115,10 @@ public class Main {
         System.out.println();
         System.out.println(separateUniqueCity(listOrders));
         System.out.println();
-
+*/
         // Set list = new HashSet(listOrders);
         //System.out.println(list);
-        Set<Order> orderSet = new TreeSet<>();
+        TreeSet<Order> orderSet = new TreeSet<>();
         User user11 = new User(1, "first", "Petrov", "Petrov", 100);
         orderSet.add(new Order(1, 5, Currency.USD, "pencil", "Active", user11));
         User user12 = new User(2, "first", "first", "kiev", 100);
@@ -136,11 +138,11 @@ public class Main {
         User user19 = new User(9, "twof", "twof", "bahmut", 100);
         orderSet.add(new Order(9, 7000, Currency.USD, "box+pen", "Active", user19));
         User user20 = new User(10, "twof", "twof", "odessa", 100);
-        orderSet.add(new Order(10, 800, Currency.USD, "box+pen", "Active", user20));
+        orderSet.add(new Order(10, 800000000, Currency.USD, "box+pen", "Active", user20));
 
         //System.out.println(checkUserLastName(orderSet, "Petrov"));
-        
-        System.out.println();
+        System.out.println(orderSet.last());
+        // System.out.println();
 
         Iterator<Order> iterator = orderSet.iterator();
         while (iterator.hasNext()) {
@@ -148,7 +150,7 @@ public class Main {
                 iterator.remove();
             }
         }
-        System.out.println(orderSet);
+        // System.out.println(orderSet);
 
 
     }
