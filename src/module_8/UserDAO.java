@@ -1,11 +1,17 @@
 package module_8;
 
 
-public class UserDAO extends AbstractDAOImpl{
-    public UserDAO() {
+import java.util.ArrayList;
+
+public class UserDAO<User> extends AbstractDAOImpl<User>{
+    ArrayList<User> dao = new ArrayList<>();
+
+    public UserDAO(ArrayList<User> dao) {
+        this.dao = dao;
     }
+
     User save(User user) {
-        save(user);
+        dao.add(user);
         return user;
     }
 }

@@ -4,27 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AbstractDAOImpl implements AbstractDAO {
+public class AbstractDAOImpl<User> implements AbstractDAO<User> {
     ArrayList<User> dao = new ArrayList<User>();
 
     @Override
-    public List save(List list) {
+    public List save(List<User> list) {
         dao.addAll(list);
         return list;
     }
 
     @Override
-    public void delete(List list) {
+    public void delete(List<User> list) {
         dao.remove(list);
     }
 
     @Override
-    public void deleteAll(List list) {
+    public void deleteAll(List<User> list) {
         dao.removeAll(list);
     }
 
     @Override
-    public void saveAll(List list) {
+    public void saveAll(List<User> list) {
         dao.addAll(list);
     }
 
