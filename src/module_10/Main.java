@@ -1,6 +1,8 @@
 package module_10;
 
 
+import module_8.User;
+
 public class Main {
     public static void main(String[] args) throws MyException {
         //task 1
@@ -26,6 +28,16 @@ public class Main {
             }
         } catch (MyException e) {
             System.out.println("You got your own Exception.");
+        }
+
+        //task 3
+        System.out.println();
+        System.out.println("TASK 3....");
+        try {
+            User test = null;
+            test.getName();
+        }catch (NullPointerException e){
+            System.out.println("You must create a 'User'.");
         }
     }
 }
