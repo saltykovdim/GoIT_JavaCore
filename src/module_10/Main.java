@@ -4,7 +4,7 @@ package module_10;
 import module_8.User;
 
 public class Main {
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args) {
         //task 1
         System.out.println("TASK 1.....");
         try {
