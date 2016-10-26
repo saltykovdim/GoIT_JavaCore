@@ -20,10 +20,10 @@ public class Main {
         System.out.println();
         System.out.println("TASK 2....");
         try {
-            String s= "hello";
+            String s = "hello";
             if (s.equals("hello")) {
                 throw new MyException(s);
-            }else{
+            } else {
                 System.out.println("You not got your own Exception");
             }
         } catch (MyException e) {
@@ -36,8 +36,14 @@ public class Main {
         try {
             User test = null;
             test.getName();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("You must create a 'User'.");
         }
+
+        //task 4
+        System.out.println();
+        System.out.println("TASK 4....");
+        Test test = new Test();
+test.f();
     }
 }
