@@ -1,6 +1,7 @@
 package module_10;
 
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import module_8.User;
 
 public class Main {
@@ -44,6 +45,22 @@ public class Main {
         System.out.println();
         System.out.println("TASK 4....");
         Test test = new Test();
-test.f();
+        test.f();
+
+        //task 5
+        System.out.println();
+        System.out.println("TASK 5....");
+        try {
+            ThrowMyException t = new ThrowMyException();
+            t.throwException();
+        } catch (MyExceptionThird e) {
+            System.out.println("My exception third.");
+        } catch (MyExceptionSecond e) {
+            System.out.println("My exception second.");
+        } catch (MyExceptionFirst e) {
+            System.out.println("My exception first.");
+        } catch (MyException e) {
+            System.out.println("My exception.");
+        }
     }
 }
