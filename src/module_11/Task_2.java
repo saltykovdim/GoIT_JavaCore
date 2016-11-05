@@ -1,11 +1,30 @@
 package module_11;
 
-
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-public class Task_1 {
+public class Task_2 {
+    public static String writeFileReplaceWords(Map<String, String> mapWords, String var, String address) throws IOException {
+        String result = null;
+        String[] l = null;
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(address))) {
+            l = var.split("\r\n");
+            for (int i = 0; i < l.length; i++) {
+                if (mapWords.containsKey(l[i])) {
+                    l[i] = mapWords.get(l[i]);
+                }
+                bw.append(l[i]);
+                bw.append(System.lineSeparator());
+            }
+        } catch (IOException e1) {
+            System.out.println("Can not write file.");
+        }
+        result = readFile(address);
+        return result;
+    }
+
     public static String readFile(String address) throws IOException {
         BufferedReader br = null;
         String result = null;
@@ -35,6 +54,7 @@ public class Task_1 {
         return result;
     }
 
+
     public static void main(String[] args) throws IOException {
         HashMap<String, String> mapWords = new HashMap<>();
         mapWords.put("Hell", "Hello");
@@ -47,17 +67,10 @@ public class Task_1 {
         String var = readFile(address);
         System.out.println("Original words to replace.");
         System.out.println(var);
-        String[] l = var.split("\r\n");
-        for (int i = 0; i < l.length; i++) {
-            if (mapWords.containsKey(l[i])) {
-                l[i] = mapWords.get(l[i]);
-            }
-        }
-        String newVar = l[0] + "\r\n";
-        for (int i = 1; i < l.length; i++) {
-            newVar += l[i] + "\r\n";
-        }
+        String newVar = writeFileReplaceWords(mapWords, var, address);
+        System.out.println("Words after replacement.");
         System.out.println(newVar);
-
     }
 }
+
+
