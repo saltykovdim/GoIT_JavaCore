@@ -54,7 +54,6 @@ public class Task_2 {
         return result;
     }
 
-
     public static void main(String[] args) throws IOException {
         HashMap<String, String> mapWords = new HashMap<>();
         mapWords.put("Hell", "Hello");

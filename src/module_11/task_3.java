@@ -1,11 +1,22 @@
 package module_11;
 
-
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Task_1 {
+public class task_3 {
+    public static void writeFileReplaceWords(String var, String address) throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(address))) {
+            String[] l = var.split("\r\n");
+            for (int i = 0; i < l.length; i++) {
+                bw.append(l[i]);
+                bw.append(System.lineSeparator());
+            }
+        } catch (IOException e1) {
+            System.out.println("Can not write file.");
+        }
+    }
+
     public static String readFile(String address) throws IOException {
         BufferedReader br = null;
         String result = null;
@@ -53,11 +64,9 @@ public class Task_1 {
                 l[i] = mapWords.get(l[i]);
             }
         }
-        String newVar = l[0] + "\r\n";
         for (int i = 1; i < l.length; i++) {
             var += l[i] + "\r\n";
         }
-        System.out.println(var);
-
+        writeFileReplaceWords(var, address);
     }
 }
