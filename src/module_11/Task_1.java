@@ -46,6 +46,7 @@ public class Task_1 {
         System.out.println("Enter the path to the file.");
         String address = scan.next();
         String var = readFile(address);
+        scan.close();
         System.out.println("Original words to replace.");
         System.out.println(var);
         String[] l = var.split("\r\n");
@@ -60,6 +61,5 @@ public class Task_1 {
             newVar += l[i] + "\r\n";
         }
         System.out.println(newVar);
-
     }
 }
