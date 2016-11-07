@@ -9,9 +9,10 @@ public class Task_1 {
     public static String readFile(String address) throws IOException {
         BufferedReader br = null;
         String result = null;
-        try {
+        try  {
             FileReader fileReader = new FileReader(address);
             br = new BufferedReader(fileReader);
+
         } catch (FileNotFoundException e) {
             System.out.println("file not found");
         }
@@ -27,7 +28,7 @@ public class Task_1 {
                 }
                 line = br.readLine();
             }
-
+            br.close();
             result = sb.toString();
         } catch (IOException e) {
             System.out.println(e);
@@ -53,11 +54,12 @@ public class Task_1 {
                 l[i] = mapWords.get(l[i]);
             }
         }
+        System.out.println("The words after replace.");
         String newVar = l[0] + "\r\n";
         for (int i = 1; i < l.length; i++) {
-            var += l[i] + "\r\n";
+            newVar += l[i] + "\r\n";
         }
-        System.out.println(var);
+        System.out.println(newVar);
 
     }
 }
