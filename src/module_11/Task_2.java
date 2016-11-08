@@ -10,13 +10,13 @@ public class Task_2 {
         String result = null;
         String[] l = null;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(address))) {
-            l = var.split("\r\n");
+            l = var.split(" ");
             for (int i = 0; i < l.length; i++) {
                 if (mapWords.containsKey(l[i])) {
                     l[i] = mapWords.get(l[i]);
                 }
                 bw.append(l[i]);
-                bw.append(System.lineSeparator());
+                bw.append(" ");
             }
         } catch (IOException e1) {
             System.out.println("Can not write file.");
@@ -34,19 +34,14 @@ public class Task_2 {
         } catch (FileNotFoundException e) {
             System.out.println("file not found");
         }
-
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
-
             while (line != null) {
-                if (!line.equals("pop")) {
-                    sb.append(line);
-                    sb.append(System.lineSeparator());
-                }
+                sb.append(line);
+                sb.append(" ");
                 line = br.readLine();
             }
-
             result = sb.toString();
         } catch (IOException e) {
             System.out.println(e);

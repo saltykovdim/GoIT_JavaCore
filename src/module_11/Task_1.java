@@ -20,7 +20,6 @@ public class Task_1 {
             result = sb.toString();
             br.close();
             fl.close();
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -37,9 +36,12 @@ public class Task_1 {
         mapWords.put("Word", "World");
         Scanner scan = new Scanner(new InputStreamReader(System.in));
         System.out.println("Enter the path to the file.");
-        String address = scan.next();
-        String var = readFile(address);
-        // var = "Hell nyeah hey hi my name is vova Wo";
+        //String address = scan.next();
+        //String var = readFile(address);
+        String var = "Hel Hell \n" +
+                "Hell Wo \n" +
+                "Hell Word Wo \n" +
+                "Hell Word Hi";
         scan.close();
         System.out.println();
         System.out.println("Original words to replace.");

@@ -8,28 +8,22 @@ import java.util.Scanner;
 
 public class task_4 {
     public static String readFile(String address) throws IOException {
-        BufferedReader br = null;
         String result = null;
         try {
             FileReader fileReader = new FileReader(address);
-            br = new BufferedReader(fileReader);
-        } catch (FileNotFoundException e) {
-            System.out.println("file not found");
-        }
-
-        try {
+            BufferedReader br = new BufferedReader(fileReader);
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
-
             while (line != null) {
-                if (!line.equals("pop")) {
-                    sb.append(line);
-                    sb.append(System.lineSeparator());
-                }
+                sb.append(line);
+                sb.append(" ");
                 line = br.readLine();
             }
-
             result = sb.toString();
+            br.close();
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("file not found");
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -39,7 +33,7 @@ public class task_4 {
     public static int checkWord(String word, String address) throws IOException {
         String var = readFile(address);
         int amount = 0;
-        String[] temp = var.split("\r\n");
+        String[] temp = var.split(" ");
         for (int i = 0; i < temp.length; i++) {
             if (temp[i].equals(word)) {
                 amount++;
