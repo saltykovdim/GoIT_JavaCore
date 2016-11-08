@@ -7,31 +7,24 @@ import java.util.Scanner;
 
 public class Task_1 {
     public static String readFile(String address) throws IOException {
-        BufferedReader br = null;
         String result = null;
-        try  {
-            FileReader fileReader = new FileReader(address);
-            br = new BufferedReader(fileReader);
-
-        } catch (FileNotFoundException e) {
-            System.out.println("file not found");
-        }
-
-        try {
+        try (FileReader fl = new FileReader(address)) {
+            BufferedReader br = new BufferedReader(fl);
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
-
             while (line != null) {
-                if (!line.equals("pop")) {
-                    sb.append(line);
-                    sb.append(System.lineSeparator());
-                }
+                sb.append(line);
+                sb.append(System.lineSeparator());
                 line = br.readLine();
             }
-            br.close();
             result = sb.toString();
+            br.close();
+            fl.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return result;
     }
