@@ -14,7 +14,7 @@ public class Task_1 {
             String line = br.readLine();
             while (line != null) {
                 sb.append(line);
-                sb.append(System.lineSeparator());
+                sb.append(" ");
                 line = br.readLine();
             }
             result = sb.toString();
@@ -39,19 +39,22 @@ public class Task_1 {
         System.out.println("Enter the path to the file.");
         String address = scan.next();
         String var = readFile(address);
+        // var = "Hell nyeah hey hi my name is vova Wo";
         scan.close();
+        System.out.println();
         System.out.println("Original words to replace.");
         System.out.println(var);
-        String[] l = var.split("\r\n");
+        String[] l = var.split(" ");
         for (int i = 0; i < l.length; i++) {
             if (mapWords.containsKey(l[i])) {
                 l[i] = mapWords.get(l[i]);
             }
         }
+        System.out.println();
         System.out.println("The words after replace.");
-        String newVar = l[0] + "\r\n";
+        String newVar = l[0] + " ";
         for (int i = 1; i < l.length; i++) {
-            newVar += l[i] + "\r\n";
+            newVar += l[i] + " ";
         }
         System.out.println(newVar);
     }
